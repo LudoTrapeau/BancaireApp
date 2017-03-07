@@ -2,12 +2,21 @@ package com.ludo.myProject;
 
 
 import java.io.IOException;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.mysql.jdbc.PreparedStatement;
+
+import metier.Compte;
+import metier.User;
 
 /**
  * Servlet implementation class Login
@@ -52,6 +61,28 @@ public class Login extends HttpServlet {
 			response.sendRedirect("dashboard");
 		}else{
 			response.sendRedirect("login");
+		}
+	}
+	
+	public void toLogIn(User myUser) throws SQLException{
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			java.sql.Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/BancaireApp","root","root");
+			PreparedStatement pr = (PreparedStatement) cn.prepareStatement("SELECT * FROM user");
+			ResultSet rs = pr.executeQuery();
+			pr.execute();
+			
+			while(rs.next()){
+				Compte c = new Compte();
+				c.setId(rs.getLong("id"));
+				c.setDateOuverture(rs.getString("dateOuverture"));
+				c.setNom(rs.getString("nom"));
+				c.setIdUser(rs.getInt("idUser"));
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

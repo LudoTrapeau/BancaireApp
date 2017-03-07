@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="./bootstrap-3.3.7-dist/bootstrap.min.css" rel="stylesheet">
 <title>Insert title here</title>
 </head>
 <body>
@@ -20,10 +21,12 @@
   		Login <input type="text" class="form-control" placeholder="Votre login.." aria-describedby="sizing-addon1" id="login" name="login">
 	</div>
 	<div class="input-group input-group-lg">
-  		Mot de passe <input type="text" class="form-control" placeholder="Votre mot de passe.." aria-describedby="sizing-addon1" id="mdp" name="mdp">
+  		Mot de passe <input type="password" class="form-control" placeholder="Votre mot de passe.." aria-describedby="sizing-addon1" id="mdp" name="mdp">
 	</div>
 	<p><input type = "submit" value = "Valider"></p>
 </form>
+
+
 
 </body>
 </html>

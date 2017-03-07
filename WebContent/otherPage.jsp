@@ -7,6 +7,7 @@
         <title>Other page</title>
     </head>
     <body>
+    <h1>Bancaire App</h1>
         <p>
             <% String login = (String) request.getParameter("login");
                String nom = (String) request.getParameter("nom");
@@ -20,6 +21,8 @@
             
             
             %>
+            
+            <a href="pageComptes.jsp">Consulter mes comptes</a>
         </p>
     </body>
 </html>
