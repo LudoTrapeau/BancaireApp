@@ -26,40 +26,12 @@
 
 <h1>Mes comptes</h1>
 
-<form action="prodserv" method="post">
-<table border = "1" width="50%">
-<tr>
-		<td> Id </td>
-		<td> <input type="text" name="id"/></td>
-	</tr>
-	<tr>
-		<td> Nom </td>
-		<td> <input type="text" name="nom"/></td>
-	</tr>
-	<tr>
-		<td> Date d'ouverture </td>
-		<td> <input type="text" name="dateOuverture"/></td>
-	</tr>
-	<tr>
-		<td> Solde </td>
-		<td> <input type="text" name="solde"/></td>
-	</tr>
-	<tr>
-		<td> Id user </td>
-		<td> <input type="text" name="idUser"/></td>
-	</tr>
-	<tr> 
-		<td><input type="submit" value="valider"></td> 
-	</tr>
-</table>
-</form>
-
 <table border="1", width="60%">
 	<tr>
 		<th>Id</th>
 		<th>Nom</th>
 		<th>Date Ouverture</th>
-		<th>Solde (en euros)</th>
+		<th>Solde</th>
 		<th>id User</th>
 		<th>Option</th>
 	</tr>
@@ -73,7 +45,7 @@
 		<td><%=c.getId() %> </td>
 		<td><%=c.getNom() %> </td>
 		<td><%= c.getDateOuverture() %></td>
-		<td><%= c.getSolde() %></td>
+		<td><%= c.getSolde() %> euros</td>
 		<td><%= c.getIdUser() %></td>
 		<td><form action="prodserv" method="post">
 				<input type="hidden" name="id" value="<%= c.getId() %>">
@@ -89,6 +61,8 @@
 		
 	</tr>
 </table>
+
+
 
 </body>
 </html>

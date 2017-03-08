@@ -8,15 +8,17 @@ public class Compte {
 	private String nom;
 	private String dateOuverture;
 	private int idUser;
+	private String solde;
 	
 	public Compte() {
 		super();
 	}
-	public Compte(Long id, String nom, String dateOuverture, int idUser) {
+	public Compte(Long id, String nom, String dateOuverture, String solde, int idUser) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.dateOuverture = dateOuverture;
+		this.solde = solde;
 		this.idUser = idUser;
 	}
 	public Long getId() {
@@ -50,6 +52,12 @@ public class Compte {
 	
 	public void show(){
 		System.out.println(toString());
+	}
+	public String getSolde() {
+		return solde;
+	}
+	public void setSolde(String solde) {
+		this.solde = solde;
 	}
 
 }

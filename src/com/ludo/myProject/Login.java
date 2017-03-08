@@ -57,11 +57,28 @@ public class Login extends HttpServlet {
 		session.setAttribute("login",login);
 		session.setAttribute("mdp",mdp);
 		
-		if(login.equals("ludo") && mdp.equals("azerty")){
+		/*if(login.equals("ludo") && mdp.equals("azerty")){
 			response.sendRedirect("dashboard");
 		}else{
 			response.sendRedirect("login");
 		}
+		*/
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			
+			java.sql.Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/BancaireApp","root","root");
+			PreparedStatement pr = (PreparedStatement) cn.prepareStatement("SELECT * FROM utilisateur WHERE email = '" + login + "' AND password = '" + mdp +"'");
+			ResultSet rs = pr.executeQuery();
+			pr.execute();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void toLogIn(User myUser) throws SQLException{

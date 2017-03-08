@@ -15,7 +15,7 @@
   <h1>Login de connexion</h1>
 </div>
 
-<form action="otherPage.jsp" method="post">
+<form action="login.html" method="post">
 <div class="input-group input-group-lg">
   		Nom <input type="text" class="form-control" placeholder="Votre nom.." aria-describedby="sizing-addon1" id="nom" name="nom">
 	</div>

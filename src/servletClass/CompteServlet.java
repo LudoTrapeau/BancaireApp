@@ -42,10 +42,11 @@ public class CompteServlet extends HttpServlet {
 			//Récup des infos
 			String nom = req.getParameter("nom");
 			String dateOuverture = req.getParameter("dateOuverture");
+			String solde = req.getParameter("solde");
 			String idUser = req.getParameter("idUser");
 			
 			// Creation des objets
-			Compte c = new Compte(1L,nom, dateOuverture,Integer.parseInt(idUser));
+			Compte c = new Compte(1L,nom, dateOuverture,solde,Integer.parseInt(idUser));
 			
 			
 			//Traitement

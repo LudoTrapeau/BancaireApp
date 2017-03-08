@@ -67,7 +67,7 @@ public class Operation {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			java.sql.Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/BancaireApp","root","root");
-			PreparedStatement pr = (PreparedStatement) cn.prepareStatement("SELECT * FROM compte");
+			PreparedStatement pr = (PreparedStatement) cn.prepareStatement("SELECT * FROM compte WHERE idUser = 1");
 			ResultSet rs = pr.executeQuery();
 			pr.execute();
 			
